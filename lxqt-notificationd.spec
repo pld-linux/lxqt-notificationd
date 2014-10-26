@@ -1,20 +1,20 @@
 #
 # Conditional build:
 #
-%define		qtver		4.8.5
+%define		qtver		5.3.1
 
 Summary:	lxqt-notificationd
 Name:		lxqt-notificationd
-Version:	0.7.0
-Release:	0.1
+Version:	0.8.0
+Release:	0.2
 License:	GPLv2 and LGPL-2.1+
 Group:		X11/Applications
-Source0:	http://lxqt.org/downloads/lxqt/0.7.0/%{name}-%{version}.tar.xz
-# Source0-md5:	d41897cfdcd2e84dcd9301e59e7d7bb4
+Source0:	http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
+# Source0-md5:	ac178f02150fac3585096bd28a28d13e
 URL:		http://www.lxqt.org/
 BuildRequires:	cmake >= 2.8.3
-BuildRequires:	liblxqt-devel >= 0.7.0
-BuildRequires:	libqtxdg-devel >= 0.5.3
+BuildRequires:	liblxqt-devel >= 0.8.0
+BuildRequires:	libqtxdg-devel >= 1.0.0
 BuildRequires:	xz-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -22,12 +22,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 lxqt-notificationd
 
 %prep
-%setup -q -c %{name}-%{version}
+%setup -q
 
 %build
 install -d build
 cd build
 %cmake \
+    -DUSE_QT5=ON \
 	../
 
 %{__make}
