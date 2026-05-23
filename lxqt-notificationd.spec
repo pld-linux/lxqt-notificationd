@@ -6,19 +6,19 @@
 Summary:	Notification daemon for LXQt desktop suite
 Summary(pl.UTF-8):	Demon powiadomień dla środowiska graficznego LXQt
 Name:		lxqt-notificationd
-Version:	2.3.1
+Version:	2.4.0
 Release:	1
 License:	GPLv2 and LGPL-2.1+
 Group:		X11/Applications
 Source0:	https://github.com/lxqt/lxqt-notificationd/releases/download/%{version}/%{name}-%{version}.tar.xz
-# Source0-md5:	98dc4ca92f2773fdbf1b894fb988274b
+# Source0-md5:	053f0b2de428b53fa4ce6e2f94ff2217
 URL:		http://www.lxqt.org/
 BuildRequires:	Qt6DBus-devel >= %{qtver}
 BuildRequires:	Qt6Widgets-devel >= %{qtver}
 BuildRequires:	cmake >= 3.18.0
 BuildRequires:	kf6-kwindowsystem-devel >= 6.0.0
 BuildRequires:	kp6-layer-shell-qt-devel >= 6.0.0
-BuildRequires:	liblxqt-devel >= 2.3.0
+BuildRequires:	liblxqt-devel >= 2.4.0
 BuildRequires:	qt6-linguist >= %{qtver}
 BuildRequires:	xz-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
